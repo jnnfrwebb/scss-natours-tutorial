@@ -1,0 +1,27 @@
+
+/* reset styles for browsers */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* normally box-sizing is not inherited, however by setting it to inherit in the 
+   universal selector, all elements will inherit box-sizing by default, and by 
+   declaring box-sizing: border-box in the body selector, all child elements of body
+   will inherit border-box */
+  box-sizing: inherit;
+}
+
+/* declare root font size (what 1rem is) in order to use rems throughout the file. 
+ ideally use 10px for simplicity in computing rem values, however, 
+ best practice is to use em not px (to not override user's custom browser font-size settings).
+ default browser font size is 16px, so to get 10px from that, it would be 62.5% */
+html {
+  font-size: 62.5%;
+}
+
+/* font should be set in body element, will be inherited by all child elements.
+ more efficient than including in the global * selector above. */
+body {
+  box-sizing: border-box;
+}
