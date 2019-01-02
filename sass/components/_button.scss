@@ -1,5 +1,8 @@
 
 .btn {
+  //need to specify "&" here for the <button> element, which does not
+  //have the :link or :visited psuedo classes
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -10,6 +13,10 @@
     transition: all 0.2s; /* animates any property changes */
     position: relative;
     font-size: $default-font-size;
+
+    //change for the <button> element
+    border: none;
+    cursor: pointer;
   }
   
   &:hover {
@@ -22,7 +29,9 @@
     }
   }
   
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 5px 1rem rgba($color-black, 0.2);
   }
